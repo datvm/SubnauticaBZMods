@@ -1,0 +1,9 @@
+{
+    "Id": "LVFasterGrowth",
+    "DisplayName": "Faster Growth",
+    "Author": "Luke Vo",
+    "Version": "1.0",
+    "Enable": true,
+    "Game": "BelowZero",
+    "AssemblyName": "LVFasterGrowth.dll"
+}
