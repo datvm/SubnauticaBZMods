@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using LukeMods.Common;
 using QModManager.API.ModLoading;
 using System;
 using System.Collections.Generic;
@@ -16,8 +17,7 @@ namespace LukeMods.FasterGrowth
         [QModPatch]
         public static void Init()
         {
-            var harmony = new Harmony("LVFasterGrowth");
-            harmony.PatchAll();
+            BaseInitializer.Init("LVFasterGrowth");
         }
 
     }
