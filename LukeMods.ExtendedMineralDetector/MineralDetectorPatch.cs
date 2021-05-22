@@ -20,8 +20,6 @@ namespace LukeMods.ExtendedMineralDetector
 
             __instance.powerConsumption = conf.PowerConsumption;
             __instance.scanDistance = conf.ScanDistance;
-
-            Logger.Log(Logger.Level.Debug, "Changed Detector Range: " + __instance.scanDistance, null, true);
         }
 
     }

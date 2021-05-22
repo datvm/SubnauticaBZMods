@@ -1,10 +1,4 @@
 {
-    "Knife": {
-        "Range": 10,
-        "Damage": 80
-    },
-    "HeatBlade": {
-        "Range": 10,
-        "Damage": 40
-    }
+    "PowerConsumption": 0.5,
+    "ScanDistance": 200.0
 }
