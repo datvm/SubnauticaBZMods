@@ -17,7 +17,7 @@ namespace LukeMods.FasterGrowth
         [QModPatch]
         public static void Init()
         {
-            BaseInitializer.Init("LVFasterGrowth", typeof(Initializer).Assembly);
+            BaseInitializer.Init(nameof(FasterGrowth), typeof(Initializer).Assembly);
         }
 
     }

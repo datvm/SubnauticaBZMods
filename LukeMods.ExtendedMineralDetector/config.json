@@ -1,0 +1,10 @@
+{
+    "Knife": {
+        "Range": 10,
+        "Damage": 80
+    },
+    "HeatBlade": {
+        "Range": 10,
+        "Damage": 40
+    }
+}

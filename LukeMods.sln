@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LukeMods.Common", "LukeMods
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LukeMods.OPBladeBZ", "LukeMods.OPBladeBZ\LukeMods.OPBladeBZ.csproj", "{75B8EE27-C160-45FD-91C2-A64CE58A6B8E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mods", "Mods", "{12C9D996-EED1-4D1D-A302-414AFC6AF92F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LukeMods.ExtendedMineralDetector", "LukeMods.ExtendedMineralDetector\LukeMods.ExtendedMineralDetector.csproj", "{5A681551-F822-4E74-8E75-C7F13556F010}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,9 +31,18 @@ Global
 		{75B8EE27-C160-45FD-91C2-A64CE58A6B8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75B8EE27-C160-45FD-91C2-A64CE58A6B8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75B8EE27-C160-45FD-91C2-A64CE58A6B8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A681551-F822-4E74-8E75-C7F13556F010}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A681551-F822-4E74-8E75-C7F13556F010}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A681551-F822-4E74-8E75-C7F13556F010}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A681551-F822-4E74-8E75-C7F13556F010}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{577E5BA3-0303-42DE-971B-552CF0B38464} = {12C9D996-EED1-4D1D-A302-414AFC6AF92F}
+		{75B8EE27-C160-45FD-91C2-A64CE58A6B8E} = {12C9D996-EED1-4D1D-A302-414AFC6AF92F}
+		{5A681551-F822-4E74-8E75-C7F13556F010} = {12C9D996-EED1-4D1D-A302-414AFC6AF92F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {31FC65BB-E657-43F8-9C3A-11E996015250}
