@@ -18,8 +18,6 @@ namespace LukeMods.OPBladeBZ
             var conf = Config.Instance;
             var data = __instance is HeatBlade ? conf.HeatBlade : conf.Knife;
 
-            Logger.Log(Logger.Level.Debug, "Blade changed: " + data.Damage, null, true);
-
             __instance.damage = data.Damage;
             __instance.attackDist = data.Range;
         }
