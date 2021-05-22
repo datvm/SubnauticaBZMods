@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LukeMods.FasterGrowth", "Lu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LukeMods.Common", "LukeMods.Common\LukeMods.Common.csproj", "{4B8B84BE-EDE3-47A8-80D9-DCFBB106EE57}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LukeMods.OPBladeBZ", "LukeMods.OPBladeBZ\LukeMods.OPBladeBZ.csproj", "{75B8EE27-C160-45FD-91C2-A64CE58A6B8E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{4B8B84BE-EDE3-47A8-80D9-DCFBB106EE57}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B8B84BE-EDE3-47A8-80D9-DCFBB106EE57}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B8B84BE-EDE3-47A8-80D9-DCFBB106EE57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75B8EE27-C160-45FD-91C2-A64CE58A6B8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75B8EE27-C160-45FD-91C2-A64CE58A6B8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75B8EE27-C160-45FD-91C2-A64CE58A6B8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75B8EE27-C160-45FD-91C2-A64CE58A6B8E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

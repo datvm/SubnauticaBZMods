@@ -1,0 +1,9 @@
+{
+    "Id": "LVOPBlade",
+    "DisplayName": "OP Blade (Below Zero)",
+    "Author": "Luke Vo",
+    "Version": "1.0",
+    "Enable": true,
+    "Game": "BelowZero",
+    "AssemblyName": "LVOPBlade.dll"
+}

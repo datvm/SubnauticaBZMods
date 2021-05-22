@@ -25,7 +25,7 @@ namespace LukeMods.Common
             }
             else
             {
-                File.WriteAllText(path, JsonConvert.SerializeObject(this));
+                File.WriteAllText(path, JsonConvert.SerializeObject(this, Formatting.Indented));
             }
         }
 
