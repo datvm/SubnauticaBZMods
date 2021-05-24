@@ -1,10 +1,12 @@
 {
     "Knife": {
         "Range": 10,
-        "Damage": 80
+        "Damage": 80,
+        "SpikyTrapDamage": 4
     },
     "HeatBlade": {
         "Range": 10,
-        "Damage": 40
+        "Damage": 40,
+        "SpikyTrapDamage": 8
     }
 }

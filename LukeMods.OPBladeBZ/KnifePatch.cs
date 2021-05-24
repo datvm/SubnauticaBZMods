@@ -20,6 +20,7 @@ namespace LukeMods.OPBladeBZ
 
             __instance.damage = data.Damage;
             __instance.attackDist = data.Range;
+            __instance.spikeyTrapDamage = data.SpikyTrapDamage;
         }
 
     }

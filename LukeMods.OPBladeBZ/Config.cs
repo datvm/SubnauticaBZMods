@@ -12,8 +12,8 @@ namespace LukeMods.OPBladeBZ
     {
         public static readonly Config Instance = new Config();
 
-        public KnifeConfig Knife { get; set; } = new KnifeConfig() { Range = 10, Damage = 80, };
-        public KnifeConfig HeatBlade { get; set; } = new KnifeConfig() { Range = 10, Damage = 40, };
+        public KnifeConfig Knife { get; set; } = new KnifeConfig() { Range = 10, Damage = 80, SpikyTrapDamage = 4f, };
+        public KnifeConfig HeatBlade { get; set; } = new KnifeConfig() { Range = 10, Damage = 40, SpikyTrapDamage = 8f, };
 
         private Config()
         {
@@ -23,6 +23,7 @@ namespace LukeMods.OPBladeBZ
         {
             public float Range { get; set; } = 10F;
             public float Damage { get; set; } = 80F;
+            public float SpikyTrapDamage { get; set; } = 4f;
         }
 
     }
