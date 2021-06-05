@@ -1,0 +1,9 @@
+{
+    "Id": "LVFasterPdaScan",
+    "DisplayName": "Faster PDA Scan",
+    "Author": "Luke Vo",
+    "Version": "1.1",
+    "Enable": true,
+    "Game": "BelowZero",
+    "AssemblyName": "LVFasterPdaScan.dll"
+}
