@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4B8B84BE-EDE3-47A8-80D9-DCFBB106EE57}</ProjectGuid>
+    <ProjectGuid>{2DBBDB97-D827-4687-8798-6645795465DE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LukeMods.Common</RootNamespace>
-    <AssemblyName>LukeMods.Common</AssemblyName>
+    <RootNamespace>LukeMods.NoDisclaimerScreen</RootNamespace>
+    <AssemblyName>LVNoDisclaimerScreen</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -37,10 +37,6 @@
     <Reference Include="Assembly-CSharp">
       <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\SubnauticaZero\SubnauticaZero_Data\Managed\Assembly-CSharp.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\SubnauticaZero\SubnauticaZero_Data\Managed\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="QModInstaller">
       <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\SubnauticaZero\BepInEx\plugins\QModManager\QModInstaller.dll</HintPath>
     </Reference>
@@ -54,10 +50,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseConfig.cs" />
-    <Compile Include="BaseInitializer.cs" />
-    <Compile Include="ModUtils.cs" />
+    <Compile Include="Initializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LukeMods.Common\LukeMods.Common.csproj">
+      <Project>{4b8b84be-ede3-47a8-80d9-dcfbb106ee57}</Project>
+      <Name>LukeMods.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="mod.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

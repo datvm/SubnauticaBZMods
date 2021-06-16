@@ -1,0 +1,9 @@
+{
+    "Id": "LVNoDisclaimerScreen",
+    "DisplayName": "No Disclaimer Screen",
+    "Author": "Luke Vo",
+    "Version": "1.0",
+    "Enable": true,
+    "Game": "BelowZero",
+    "AssemblyName": "LVNoDisclaimerScreen.dll"
+}
