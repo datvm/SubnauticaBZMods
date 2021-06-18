@@ -1,0 +1,9 @@
+{
+    "Id": "LVPropulseEverything",
+    "DisplayName": "Propulse Everything!",
+    "Author": "Luke Vo",
+    "Version": "1.0",
+    "Enable": true,
+    "Game": "BelowZero",
+    "AssemblyName": "LVPropulseEverything.dll"
+}

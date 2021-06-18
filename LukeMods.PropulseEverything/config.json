@@ -1,0 +1,7 @@
+{
+    "EnergyRate": 0.5,
+    "PickupDistance": 50.0,
+    "AttractionForce": 350.0,
+    "ShootForce": 150.0,
+    "MassScalingFactor": 0.001
+}

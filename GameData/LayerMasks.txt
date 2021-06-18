@@ -1,0 +1,32 @@
+0 Default
+1 TransparentFX
+2 Ignore Raycast
+3
+4 Water
+5 UI
+6
+7
+8 Viewmodel
+9 OnlyVehicle
+10 BuildPreview
+11 BuiltEntities
+12 HardPoints
+13 Useable
+14 IgnoreDepthWorldUI
+15 SpyPengin
+16 IgnoreHoverbike
+17 Vehicle
+18 FrontEnd
+19 Player
+20
+21 Trigger
+22 NotUseable
+23
+24 RenderForAllCameras
+25 ControlRoomMinimap
+26
+27 IntroSpace
+28 BaseClipProxy
+29 Sky
+30 TerrainCollider
+31 DebugOverlays

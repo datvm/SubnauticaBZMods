@@ -23,6 +23,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LukeMods.Vitality", "LukeMo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LukeMods.NoDisclaimerScreen", "LukeMods.NoDisclaimerScreen\LukeMods.NoDisclaimerScreen.csproj", "{2DBBDB97-D827-4687-8798-6645795465DE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LukeMods.PropulseEverything", "LukeMods.PropulseEverything\LukeMods.PropulseEverything.csproj", "{4C370FCA-4DE0-4879-8CD6-CE9CD6F6F64F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GameData", "GameData", "{0734ED33-CC55-4998-B7AA-88DA59001E08}"
+	ProjectSection(SolutionItems) = preProject
+		GameData\LayerMasks.txt = GameData\LayerMasks.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -65,6 +72,10 @@ Global
 		{2DBBDB97-D827-4687-8798-6645795465DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2DBBDB97-D827-4687-8798-6645795465DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2DBBDB97-D827-4687-8798-6645795465DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C370FCA-4DE0-4879-8CD6-CE9CD6F6F64F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C370FCA-4DE0-4879-8CD6-CE9CD6F6F64F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C370FCA-4DE0-4879-8CD6-CE9CD6F6F64F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C370FCA-4DE0-4879-8CD6-CE9CD6F6F64F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -78,6 +89,7 @@ Global
 		{DE2A24EC-B6E5-44CB-B850-8E02BA4713FF} = {12C9D996-EED1-4D1D-A302-414AFC6AF92F}
 		{4566F22E-6F49-407B-A6A3-65CD26FE7F26} = {12C9D996-EED1-4D1D-A302-414AFC6AF92F}
 		{2DBBDB97-D827-4687-8798-6645795465DE} = {12C9D996-EED1-4D1D-A302-414AFC6AF92F}
+		{4C370FCA-4DE0-4879-8CD6-CE9CD6F6F64F} = {12C9D996-EED1-4D1D-A302-414AFC6AF92F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {31FC65BB-E657-43F8-9C3A-11E996015250}
