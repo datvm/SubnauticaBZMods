@@ -1,0 +1,9 @@
+{
+    "Id": "LVBetterChunks",
+    "DisplayName": "Better Chunks",
+    "Author": "Luke Vo",
+    "Version": "1.0",
+    "Enable": true,
+    "Game": "BelowZero",
+    "AssemblyName": "LVBetterChunks.dll"
+}
