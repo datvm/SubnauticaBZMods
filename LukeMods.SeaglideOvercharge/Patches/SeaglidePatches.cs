@@ -77,9 +77,10 @@ namespace LukeMods.SeaglideOvercharge.Patches
             // Check battery
             var c = C;
             var batteryConsumption = c.OverchargeBatteryCost;
+            var energyConsumption = c.OverchargeEnergyConsumption;
             var eMixin = (EnergyMixin)energyMixin.GetValue(info.seaglide);
             var battery = eMixin.GetBattery() as Battery;
-            if (battery == null || battery.charge <= batteryConsumption)
+            if (battery == null || battery.capacity <= batteryConsumption || battery.charge <= energyConsumption)
             {
                 ErrorMessage.AddError("Not enough battery charge");
                 return;
@@ -95,7 +96,7 @@ namespace LukeMods.SeaglideOvercharge.Patches
             // Boost
             info.overchargeTime = c.OverchargeDuration;
             info.overchargeMul = c.OverchargeBoost;
-            eMixin.ConsumeEnergy(batteryConsumption);
+            eMixin.ConsumeEnergy(energyConsumption);
             battery._capacity -= batteryConsumption;
 
             recentOvercharge = info;
@@ -128,11 +129,6 @@ namespace LukeMods.SeaglideOvercharge.Patches
         public SeaglideOverchargeInfo(Seaglide seaglide)
         {
             this.seaglide = seaglide;
-        }
-
-        public void Update()
-        {
-
         }
 
     }

@@ -2,7 +2,7 @@
     "Id": "LVSeaglideOvercharge",
     "DisplayName": "Seaglide Overcharge",
     "Author": "Luke Vo",
-    "Version": "1.0",
+    "Version": "1.1",
     "Enable": true,
     "Game": "BelowZero",
     "AssemblyName": "LVSeaglideOvercharge.dll"

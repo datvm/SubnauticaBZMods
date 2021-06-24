@@ -1,6 +1,7 @@
 {
     "OverchargeDuration": 15.0,
-    "OverchargeBoost": 4,
+    "OverchargeBoost": 2.5,
     "OverchargeBatteryCost": 20.0,
+    "OverchargeEnergyConsumption": 20.0,
     "OverchargeKey": "t"
 }
