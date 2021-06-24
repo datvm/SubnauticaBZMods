@@ -32,7 +32,10 @@ namespace LukeMods.BetterChunks.Patches
                 if (!alreadyChanged && instruction.opcode == OpCodes.Ldc_I4_0)
                 {
                     alreadyChanged = true;
-                    yield return new CodeInstruction(OpCodes.Ldc_I4_1);
+                    yield return new CodeInstruction(OpCodes.Ldc_I4_1)
+                    {
+                        labels = instruction.labels,
+                    };
                 }
                 else
                 {

@@ -11,11 +11,11 @@ namespace LukeMods.BetterChunks
     {
         public static readonly Config Instance = new Config();
 
-        public float[] SpawnChances { get; set; } = { 1, 1, .5f, .1f };
-        public float[] Silver { get; set; } = { 1, .5f, .1f, 0 };
-        public float[] Gold { get; set; } = { 1, .5f, .1f, 0 };
-        public float[] Lead { get; set; } = { 1, .5f, .1f, 0 };
-        public float[] Copper { get; set; } = { 1, .5f, .1f, 0 };
+        public float[] SpawnChances { get; set; } = { 1, .75f, .3f, .1f };
+        public float[] Silver { get; set; } = { 1, .2f, .1f, 0 };
+        public float[] Gold { get; set; } = { 1, .2f, .1f, 0 };
+        public float[] Lead { get; set; } = { 1, .2f, .1f, 0 };
+        public float[] Copper { get; set; } = { 1, .2f, .1f, 0 };
 
         private Config()
         {
