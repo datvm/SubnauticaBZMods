@@ -43,6 +43,7 @@ EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		LukeMods.CommonShared\LukeMods.CommonShared.projitems*{2c7c0252-7ecc-4652-a3ea-1ab7839827c7}*SharedItemsImports = 4
+		LukeMods.CommonShared\LukeMods.CommonShared.projitems*{4566f22e-6f49-407b-a6a3-65cd26fe7f26}*SharedItemsImports = 4
 		LukeMods.CommonShared\LukeMods.CommonShared.projitems*{841ec252-cc92-4d34-9115-2d4708eae7c4}*SharedItemsImports = 13
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
