@@ -1,0 +1,9 @@
+{
+    "Id": "LVConfigurableSeaglide",
+    "DisplayName": "Configurable Seaglide",
+    "Author": "Luke Vo",
+    "Version": "1.0",
+    "Enable": true,
+    "Game": "BelowZero",
+    "AssemblyName": "LVConfigurableSeaglide.dll"
+}
