@@ -20,14 +20,22 @@ namespace LukeMods.ConfigurableSeaglide.Patches
         [HarmonyPatch(nameof(Update)), HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> Update(IEnumerable<CodeInstruction> instructions)
         {
-            //var shouldPatch = C.mapWorkAboveWater;
+            var shouldPatch = C.mapWorkAboveWater;
 
-            return new CodeMatcher(instructions)
-                .MatchForward(false,
-                    new CodeMatch(OpCodes.Ldc_R4, .4f)
-                )
-                .SetOperandAndAdvance(1E10f)
-                .InstructionEnumeration();
+            foreach (var instruction in instructions)
+            {
+                if (shouldPatch)
+                {
+                    if (instruction.opcode == OpCodes.Br || instruction.opcode == OpCodes.Br_S)
+                    {
+                        shouldPatch = false;
+                    }
+                }
+                else
+                {
+                    yield return instruction;
+                }
+            }
         }
 
         public static void ShowDebug(bool flag)
