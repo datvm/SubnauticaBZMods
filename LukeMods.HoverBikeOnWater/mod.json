@@ -1,0 +1,9 @@
+{
+    "Id": "LVWaterHoverbike",
+    "DisplayName": "Super Snowfox",
+    "Author": "Luke Vo",
+    "Version": "1.0",
+    "Enable": true,
+    "Game": "BelowZero",
+    "AssemblyName": "LVWaterHoverbike.dll"
+}

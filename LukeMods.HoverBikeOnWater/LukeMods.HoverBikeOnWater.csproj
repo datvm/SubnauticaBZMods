@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B0F5050F-0D63-419E-9868-310126377519}</ProjectGuid>
+    <ProjectGuid>{9F935D54-FEC1-40D0-B4BB-139BAF25B1A3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LukeMods.FasterPrawnDrill</RootNamespace>
-    <AssemblyName>LVFasterPrawnDrill</AssemblyName>
+    <RootNamespace>LukeMods.HoverBikeOnWater</RootNamespace>
+    <AssemblyName>LVWaterHoverbike</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -37,10 +37,6 @@
     <Reference Include="Assembly-CSharp">
       <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\SubnauticaZero\SubnauticaZero_Data\Managed\Assembly-CSharp.dll</HintPath>
     </Reference>
-    <Reference Include="Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\SubnauticaZero\SubnauticaZero_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\SubnauticaZero\SubnauticaZero_Data\Managed\Newtonsoft.Json.dll</HintPath>
@@ -56,21 +52,24 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" />
     <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\SubnauticaZero\SubnauticaZero_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\SubnauticaZero\SubnauticaZero_Data\Managed\UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config.cs" />
-    <Compile Include="ExosuitDrillArmPatch.cs" />
     <Compile Include="Initializer.cs" />
+    <Compile Include="Patches\HoverbikePatches.cs" />
+    <Compile Include="Patches\HoverPadPatches.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="config.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Include="mod.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
