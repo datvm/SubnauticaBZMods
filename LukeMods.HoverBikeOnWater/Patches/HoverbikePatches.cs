@@ -37,6 +37,8 @@ namespace LukeMods.HoverBikeOnWater.Patches
 
             head.minViewConeAperture = c.MinViewConeAperture;
             head.maxViewConeAperture = c.MaxViewConeAperture;
+
+            __instance.liveMixin.data.maxHealth = c.MaxHealth;
         }
 
         [HarmonyPatch(nameof(HoverEngines)), HarmonyTranspiler]

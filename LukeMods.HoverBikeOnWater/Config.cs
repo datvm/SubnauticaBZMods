@@ -31,6 +31,8 @@ namespace LukeMods.HoverBikeOnWater
         public string SummonKey { get; set; } = "f";
         public float SummonEnergyPerMeter { get; set; } = .1f;
 
+        public float MaxHealth { get; set; } = 200f;
+
         private Config()
         {
         }

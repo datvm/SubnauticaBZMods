@@ -23,10 +23,9 @@ namespace LukeMods.Common
                 var content = File.ReadAllText(path);
                 JsonConvert.PopulateObject(content, this);
             }
-            else
-            {
-                File.WriteAllText(path, JsonConvert.SerializeObject(this, Formatting.Indented));
-            }
+
+            // Always write the config file back to update it
+            File.WriteAllText(path, JsonConvert.SerializeObject(this, Formatting.Indented));
         }
 
         string FilePath => Path.Combine(

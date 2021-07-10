@@ -46,8 +46,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LukeMods.HoverBikeOnWater",
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		LukeMods.CommonShared\LukeMods.CommonShared.projitems*{3c59e2eb-d018-4269-9175-cf9206bcec14}*SharedItemsImports = 4
 		LukeMods.CommonShared\LukeMods.CommonShared.projitems*{841ec252-cc92-4d34-9115-2d4708eae7c4}*SharedItemsImports = 13
+		LukeMods.CommonShared\LukeMods.CommonShared.projitems*{9f935d54-fec1-40d0-b4bb-139baf25b1a3}*SharedItemsImports = 4
 		LukeMods.CommonShared\LukeMods.CommonShared.projitems*{bb19c0c9-ef9e-49fd-ba96-3a96441622e5}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
