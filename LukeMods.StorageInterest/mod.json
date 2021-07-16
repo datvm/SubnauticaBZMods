@@ -1,0 +1,9 @@
+{
+    "Id": "LVStorageInterest",
+    "DisplayName": "Storage with Interest",
+    "Author": "Luke Vo",
+    "Version": "1.0",
+    "Enable": true,
+    "Game": "BelowZero",
+    "AssemblyName": "LVStorageInterest.dll"
+}
