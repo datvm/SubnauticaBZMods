@@ -16,7 +16,7 @@ namespace LukeMods.StorageInterest.Patches
     [HarmonyPatch(typeof(StorageContainer))]
     public static class StorageContainerPatches
     {
-        static readonly Config C = Config.Instance;
+        static readonly Config config = Config.Instance;
         static readonly Dictionary<StorageContainer, float> InterestTime = new Dictionary<StorageContainer, float>();
         static readonly Dictionary<StorageContainer, float> InterestTimeRequired = new Dictionary<StorageContainer, float>();
 
@@ -25,7 +25,7 @@ namespace LukeMods.StorageInterest.Patches
         [HarmonyPatch(nameof(Awake)), HarmonyPostfix]
         public static void Awake(StorageContainer __instance)
         {
-            if (!C.Containers.Any(q => __instance.name.IndexOf(q, StringComparison.OrdinalIgnoreCase) > -1))
+            if (!StorageContainerHasInterestEnabled(__instance))
             {
                 return;
             }
@@ -42,6 +42,35 @@ namespace LukeMods.StorageInterest.Patches
         }
 
         /**
+         * Ensure the container we are validating is enabled in the
+         * list of containers that will pay interest.
+         */
+        public static bool StorageContainerHasInterestEnabled(StorageContainer __instance)
+        {
+            string[] containers = config.GetContainers();
+            return containers.Any(storageType => __instance.name.StartsWith(storageType, StringComparison.OrdinalIgnoreCase));
+        }
+
+        /**
+         * To avoid having to check all Storage types and what would they accept
+         * when using the method "HasRoomFor", we are simplifying the logic by
+         * using X and Y dimensions against the ammount of items inside the storage.
+         */
+        public static bool StorageContainerIsFull(StorageContainer __instance)
+        {
+            // Calculate the available space in this container.
+            int containerSize = __instance.container.sizeX * __instance.container.sizeY;
+            int itemsAmmount = 0;
+            // Calculate the current used spaces inside the container.
+            foreach (var item in __instance.container)
+            {
+                itemsAmmount++;
+            }
+            // Check if all spaces are used inside the container.
+            return (itemsAmmount == containerSize);
+        }
+
+        /**
          * Improve the player experience by giving visible feedback. 
          * 
          * This will allow the player to know the current state of
@@ -51,28 +80,58 @@ namespace LukeMods.StorageInterest.Patches
         public static void OnHandHover(GUIHand hand)
         {
             GameObject target = hand.GetActiveTarget();
-            StorageContainer container = target.GetComponent<StorageContainer>();
+            StorageContainer __instance = target.GetComponent<StorageContainer>();
 
-            // Assume all containers start empty.
+            // Assume that all containers start empty.
             string subscript = "Empty";
+
             // If the container has items:
-            if (!container.IsEmpty())
+            if (!__instance.IsEmpty())
             {
                 // Get the time information to calculate the interest.
-                InterestTime.TryGetValue(container, out var timeIn);
-                InterestTimeRequired.TryGetValue(container, out var timeRequired);
+                InterestTime.TryGetValue(__instance, out var timeIn);
+                InterestTimeRequired.TryGetValue(__instance, out var timeRequired);
                 var timePassed = Time.time - timeIn;
+
+                // Before even starting, to automate the pickup of interest
+                // we need to check if the current state means that the
+                // pickup is ready and the storage is not full yet.
+                // This will only happen when the player looks at the
+                // container so we will not generate all items in all
+                // containers automatically, causing an inflation of items.
+                if (!StorageContainerIsFull(__instance) && (timePassed > timeRequired))
+                {
+                    // Pickup the item and start the next calculation.
+                    StartInterestRateCalculation(__instance);
+                }
 
                 // By default, the interest is ready to be picked up!
                 // This is need as we must open the container manually to
                 // compute the interest and create the item.
                 string interestRate = "Ready!";
 
+                if (!StorageContainerHasInterestEnabled(__instance))
+                {
+                    interestRate = "Storage disabled!";
+
+                    // When disabling the storage mid-game, we need to
+                    // interrupt the current interest in progress.
+                    if (timeRequired > 0.0f)
+                    {
+                        ResetTime(__instance);
+                    }
+                }
+                // When there is no more space for a single 1x1 item, 
+                // the storage is full and there is no need to calculate
+                // the interest.
+                else if (StorageContainerIsFull(__instance))
+                {
+                    interestRate = "Storage full!";
+                }
                 // There is an issue with the interest rate not starting
                 // properly. By checking if we have no target time, we can
                 // identify it and warn the player to take action.
-                // This may also be used when the container is full.
-                if (timeRequired == 0.0f)
+                else if (timeRequired == 0.0f)
                 {
                     interestRate = "Open to start!";
                 }
@@ -81,12 +140,23 @@ namespace LukeMods.StorageInterest.Patches
                 else if (timePassed <= timeRequired)
                 {
                     // Simply percentage calculation to help the user.
-                    int percentage = (int) ((timePassed / timeRequired) * 100);
+                    int percentage = (int)((timePassed / timeRequired) * 100);
                     interestRate = percentage.ToString() + "%";
                 }
-                // Prefix the message to give more context to the player.
-                subscript = "Interest rate: " + interestRate;
+
+                // Remove the "empty" message in case we are not displaying the
+                // disabled information.
+                subscript = "";
+
+                // Only report to the player if we have a message or if the
+                // interest is disabled but the player choose to see the warning.
+                if (StorageContainerHasInterestEnabled(__instance) || config.WarnDisabledInterest)
+                {
+                    // Prefix the message to give more context to the player.
+                    subscript = "Interest rate: " + interestRate ;
+                }
             }
+
             // Add the message to the GUI when pointing the cursor to the storage.
             HandReticle.main.SetText(HandReticle.TextType.HandSubscript, subscript, true, GameInput.Button.None);
         }
@@ -105,6 +175,12 @@ namespace LukeMods.StorageInterest.Patches
          */
         private static void StartInterestRateCalculation(StorageContainer __instance)
         {
+            // Ensure we are only running interest to enabled containers.
+            if (!StorageContainerHasInterestEnabled(__instance))
+            {
+                return;
+            }
+
             if (!InterestTime.TryGetValue(__instance, out var timeIn))
             {
                 ResetTime(__instance);
@@ -141,8 +217,8 @@ namespace LukeMods.StorageInterest.Patches
 
             var timePassed = Time.time - timeIn;
 
-            var interestRate = C.InterestRate;
-            var minTime = C.MinTime;
+            var interestRate = config.InterestRate;
+            var minTime = config.MinTime;
 
             // Calculate the required time to compute the next interest payment.
             var timeRequired = Mathf.Max(interestRate / Mathf.Pow(2, maxCount - 1), minTime);
