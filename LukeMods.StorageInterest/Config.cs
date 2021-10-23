@@ -66,6 +66,14 @@ namespace LukeMods.StorageInterest
         [Toggle("Custom (Mods) Storage Types")]
         public bool CustomModsStorageTypes = false;
 
+        // To keep the original intended behavior, this new mechanic will
+        // start disabled and available as an option. This allows the
+        // player to receive the interest by just hovering the cursor over
+        // the container instead of needing to open it. The player must
+        // be close enought for the hovering event to compute.
+        [Toggle("Receive interest on hover")]
+        public bool PayInterestOnCursorHovering = false;
+
         // Provide an example to generate the config.json file so players
         // can extend the list of storages that have the interest feature.
         // By adding a valid storage type to the list, it will compute

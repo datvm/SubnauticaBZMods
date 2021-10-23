@@ -99,7 +99,9 @@ namespace LukeMods.StorageInterest.Patches
                 // This will only happen when the player looks at the
                 // container so we will not generate all items in all
                 // containers automatically, causing an inflation of items.
-                if (!StorageContainerIsFull(__instance) && (timePassed > timeRequired))
+                // This is toggled off by default and the player can change
+                // this in the configuration.
+                if (!StorageContainerIsFull(__instance) && (timePassed > timeRequired) && config.PayInterestOnCursorHovering)
                 {
                     // Pickup the item and start the next calculation.
                     StartInterestRateCalculation(__instance);
