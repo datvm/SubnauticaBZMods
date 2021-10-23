@@ -25,6 +25,5 @@ namespace LukeMods.StorageInterest
             // options GUI, the values will be written in the file as well.
             config = OptionsPanelHandler.Main.RegisterModOptions<Config>();
         }
-
     }
 }
